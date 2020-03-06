@@ -61,7 +61,7 @@ const playlist = [
     playlistId: 5,
     title: 'VS Code Top-Ten Pro Tips',
     duration: '9:35',
-    url: 'https://www.youtube.com/embed/UX36flnDv-0'
+    url: 'https://www.youtube.com/embed/u21W_tfPVrY'
   },
   {
     id: 'ebJ0XBOjowo',
@@ -83,6 +83,7 @@ const VidPlayer = ({ match, location, history }) => {
 
   useEffect(() => {
     const videoId = match.params.activeVideo;
+
     if (videoId !== undefined) {
       const newActiveVideo = state.videos.findIndex(
         video => video.id === videoId
@@ -92,10 +93,10 @@ const VidPlayer = ({ match, location, history }) => {
         activeVideo: prev.videos[newActiveVideo],
         autoplay: location.autoplay
       }));
-    } else {
+    }
+    if (videoId === undefined) {
       history.push({
-        pathname: `/${state.activeVideo.id}`,
-        autoplay: false
+        pathname: '/z-xkbNLIB5w'
       });
     }
   }, [
